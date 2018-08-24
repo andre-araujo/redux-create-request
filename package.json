@@ -1,0 +1,62 @@
+{
+  "name": "redux-create-request",
+  "version": "1.0.0",
+  "description": "A helper to make requests connected with redux without stress",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andre-araujo/redux-create-request"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "redux",
+    "request",
+    "rest",
+    "loading",
+    "load",
+    "middleware"
+  ],
+  "author": "andre-araujo <andreluis9214@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src --out-dir ./",
+    "commit": "git-cz",
+    "lint:fix": "eslint ./src --fix",
+    "lint": "eslint ./src",
+    "test": "jest --no-cache",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.6.0",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^21.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    }
+  },
+  "dependencies": {
+    "unfetch": "^3.1.1"
+  }
+}

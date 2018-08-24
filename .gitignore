@@ -1,0 +1,14 @@
+*.swp
+*~
+*.iml
+.*.haste_cache.*
+.DS_Store
+.idea
+npm-debug.log
+node_modules
+dist
+package-lock.json
+coverage
+index.js
+loadingReducer.js
+*.spec.js

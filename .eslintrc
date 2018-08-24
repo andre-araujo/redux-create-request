@@ -1,0 +1,27 @@
+{
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "test": true,
+    "expect": true,
+    "beforeEach": true,
+    "jest": true,
+    "it": true,
+    "describe": true
+  },
+  "rules": {
+    "import/prefer-default-export": 0,
+    "linebreak-style": 0,
+    "prefer-promise-reject-errors": 0,
+    "indent": [
+      1,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ]
+  },
+  "extends": "airbnb-base"
+}
