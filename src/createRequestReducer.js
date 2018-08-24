@@ -3,7 +3,7 @@ const defaultInitialState = {
   loaded: false,
   status: null,
   error: null,
-  payload: {},
+  payload: null,
 };
 
 const createRequestReducer = (actionType, initialState) =>
