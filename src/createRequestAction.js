@@ -1,8 +1,7 @@
-const createRequestAction = actionType => (url, options) => {
+const createRequestAction = actionType => (requestFunction) => {
   const actionCreator = {
     type: actionType,
-
-    request: () => fetch(url, options),
+    request: requestFunction,
   };
 
   return actionCreator;

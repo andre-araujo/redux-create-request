@@ -11,7 +11,8 @@ import { createRequestAction, createRequestReducer, createRequestMiddleware } fr
 
 const regionURL = 'https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes';
 
-const getRegions = () => createRequestAction('GET_REGIONS_REQUEST')(regionURL, { method: 'GET' });
+const getRegions = () =>
+  createRequestAction('GET_REGIONS_REQUEST')(() => fetch(regionURL, { method: 'GET' }));
 const getRegionsReducer = createRequestReducer('GET_REGIONS_REQUEST');
 
 const store = createStore(
@@ -44,7 +45,8 @@ import { createRequestAction } from 'redux-create-request';
 
 const regionURL = 'https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes';
 
-export const getRegions = () => createRequestAction('GET_REGIONS_REQUEST')(regionURL, { method: 'GET' });
+export const getRegions = () =>
+  createRequestAction('GET_REGIONS_REQUEST')(() => fetch(regionURL, { method: 'GET' }));
 ```
 
 #### Creating a reducer
@@ -71,3 +73,17 @@ const store = createStore(
 export default store;
 ```
 
+### Creating Redux Promise Module
+```javascript
+import { createReduxPromise } from 'redux-create-request';
+
+const regionURL = 'https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes';
+
+const {
+  action,
+  reducer
+} = createReduxPromise({
+  type: 'GET_REGIONS_REQUEST'
+  promise: () => fetch(regionURL, { method: 'GET' })
+});
+```
