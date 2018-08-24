@@ -16,10 +16,12 @@
     "load",
     "middleware"
   ],
+  "main": "./dist/redux-create-request.js",
   "author": "andre-araujo <andreluis9214@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "./node_modules/.bin/babel src --out-dir ./",
+    "build": "microbundle",
+    "dev": "microbundle watch",
     "commit": "git-cz",
     "lint:fix": "eslint ./src --fix",
     "lint": "eslint ./src",
@@ -35,7 +37,8 @@
     "eslint": "^4.6.0",
     "eslint-config-airbnb-base": "^12.0.0",
     "eslint-plugin-import": "^2.7.0",
-    "jest": "^21.1.0"
+    "jest": "^21.1.0",
+    "microbundle": "^0.6.0"
   },
   "config": {
     "commitizen": {
@@ -55,8 +58,5 @@
         "statements": 70
       }
     }
-  },
-  "dependencies": {
-    "unfetch": "^3.1.1"
   }
 }

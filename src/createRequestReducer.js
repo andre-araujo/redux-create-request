@@ -1,5 +1,7 @@
 const defaultInitialState = {
   loading: false,
+  loaded: false,
+  status: null,
   error: null,
   payload: {},
 };
@@ -9,22 +11,30 @@ const createRequestReducer = (actionType, initialState) =>
     switch (action.type) {
       case actionType: {
         return {
-          loading: true,
           ...state,
+          loading: true,
+          status: null,
+          error: null,
         };
       }
       case `${actionType}_SUCCESS`: {
         return {
           ...state,
-          payload: state.payload,
+          loaded: true,
           loading: false,
+          status: action.status,
+          payload: action.payload,
+          error: null,
         };
       }
       case `${actionType}_ERROR`: {
         return {
           ...state,
+          loaded: false,
           loading: false,
-          error: state.error,
+          status: action.status,
+          payload: action.payload,
+          error: action.error,
         };
       }
       default: {

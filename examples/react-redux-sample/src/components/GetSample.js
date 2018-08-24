@@ -11,15 +11,16 @@ class GetSample extends Component {
   }
 
   render() {
-    console.log(this.props.regions);
+    const { regions } = this.props;
     return (
       <Fragment>
         <form onSubmit={this.onSubmit}>
-          <button type="submit">get things</button>
+          <button type="submit">Get Brazilian regions</button>
         </form>
 
         <div>
           <h1>Response</h1>
+          <p>{JSON.stringify(regions)}</p>
         </div>
       </Fragment>
 

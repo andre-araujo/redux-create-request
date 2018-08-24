@@ -1,5 +1,3 @@
-import fetch from 'unfetch';
-
 const createRequestAction = actionType => (url, options) => {
   const actionCreator = {
     type: actionType,

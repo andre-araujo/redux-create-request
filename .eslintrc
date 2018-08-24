@@ -4,12 +4,8 @@
     "es6": true
   },
   "globals": {
-    "test": true,
-    "expect": true,
-    "beforeEach": true,
     "jest": true,
-    "it": true,
-    "describe": true
+    "fetch": true
   },
   "rules": {
     "import/prefer-default-export": 0,
