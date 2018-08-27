@@ -6,5 +6,5 @@ export const getRegionsReducer = createRequestReducer('GET_REGIONS_REQUEST');
 
 export const countiesService = createRequestService({
   type: 'GET_COUNTIES_REQUEST',
-  promise: () => fetch(countiesURL, { method: 'GET' }),
+  request: () => fetch(countiesURL, { method: 'GET' }),
 });

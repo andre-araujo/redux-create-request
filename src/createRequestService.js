@@ -3,9 +3,9 @@ import createRequestReducer from './createRequestReducer';
 
 const createRequestService = ({
   type,
-  promise,
+  request,
 }) => ({
-  action: () => createRequestAction(type)(promise),
+  action: (...restParams) => createRequestAction(type, () => request(...restParams)),
   reducer: createRequestReducer(type),
 });
 

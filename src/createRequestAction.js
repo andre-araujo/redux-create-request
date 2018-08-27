@@ -1,4 +1,4 @@
-const createRequestAction = actionType => (requestFunction) => {
+const createRequestAction = (actionType, requestFunction) => {
   const actionCreator = {
     type: actionType,
     request: requestFunction,
