@@ -5,17 +5,12 @@ import * as actions from '../stateManager/actions';
 
 class GetSample extends Component {
   render() {
-    const { regions, counties, getRegions, getCounties } = this.props;
+    const { counties, getCounties } = this.props;
     return (
       <Fragment>
-        <button onClick={getRegions}>Get Brazilian regions</button>
         <button onClick={getCounties}>Get RJ counties</button>
         <div>
-          <h1>Response 1</h1>
-          <p>{JSON.stringify(regions)}</p>
-        </div>
-        <div>
-          <h1>Response 2</h1>
+          <h1>Response</h1>
           <p>{JSON.stringify(counties)}</p>
         </div>
       </Fragment>
@@ -23,10 +18,9 @@ class GetSample extends Component {
   }
 }
 
-const mapStateToProps = ({ regions, counties }) => ({ regions, counties });
+const mapStateToProps = ({ counties }) => ({ counties });
 
 const mapDispatchToProps = (dispatch) => ({
-  getRegions: () => dispatch(actions.getRegions()),
   getCounties: () => dispatch(actions.getCounties())
 });
 

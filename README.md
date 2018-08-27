@@ -129,34 +129,3 @@ Receives error object when promise throws an error
 ##### payload
 `null` when request start
 Receives request payload when it has a `JSON` content-type header
-
-### With splitted Request Action and Reducer:
-
-`createRequestAction` and `createRequestReducer` can be used to give more freedom creating request actions and reducers as described below:
-
-```javascript
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { createRequestAction, createRequestReducer, createRequestMiddleware } from 'redux-create-request';
-
-const regionURL = 'https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes';
-
-const getRegions = () =>
-  createRequestAction('GET_REGIONS_REQUEST', () => fetch(regionURL, { method: 'GET' }));
-const getRegionsReducer = createRequestReducer('GET_REGIONS_REQUEST');
-
-const store = createStore(
-  combineReducers({
-    regions: getRegionsReducer,
-    // more reducers...
-  }),
-  applyMiddleware(createRequestMiddleware),
-);
-
-store.subscribe(() =>
-  console.log(store.getState().regions);
-  // first dispatch {"loading":true,"loaded":false,"status":null,"error":null,"payload":null}
-  // second dispatch {"loading":false,"loaded":true,"status":200,"error":null,"payload":[{"id":1101,"nome":"M ...
-)
-
-store.dispatch(getRegions());
-```
