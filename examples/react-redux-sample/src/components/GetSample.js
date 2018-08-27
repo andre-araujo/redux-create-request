@@ -5,23 +5,23 @@ import * as actions from '../stateManager/actions';
 
 class GetSample extends Component {
   render() {
-    const { counties, getCounties } = this.props;
+    const { regions, getRegions } = this.props;
     return (
       <Fragment>
-        <button onClick={getCounties}>Get RJ counties</button>
+        <button onClick={getRegions}>Get BR regions</button>
         <div>
           <h1>Response</h1>
-          <p>{JSON.stringify(counties)}</p>
+          <p>{JSON.stringify(regions)}</p>
         </div>
       </Fragment>
     );
   }
 }
 
-const mapStateToProps = ({ counties }) => ({ counties });
+const mapStateToProps = ({ regions }) => ({ regions });
 
 const mapDispatchToProps = (dispatch) => ({
-  getCounties: () => dispatch(actions.getCounties())
+  getRegions: () => dispatch(actions.getRegions())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GetSample);

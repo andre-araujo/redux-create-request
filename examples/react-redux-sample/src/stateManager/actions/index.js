@@ -1,3 +1,3 @@
-import { countiesService } from '../reducers';
+import { regionsService } from '../reducers';
 
-export const getCounties = countiesService.action;
+export const getRegions = regionsService.action;

@@ -1,6 +1,6 @@
 # Redux Create Request.
 
-A helper to make requests connected with redux without stress.
+A helper to make requests connected with redux without stress with only *607 B*.
 
 ## Why?
 
@@ -14,7 +14,7 @@ import { createRequestService, createRequestMiddleware } from 'redux-create-requ
 const regionURL = 'https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes';
 
 const getRegionsService = createRequestService({
-  type: 'GET_COUNTIES_REQUEST',
+  type: 'GET_REGIONS_REQUEST',
   request: () => fetch(regionURL, { method: 'GET' })
 });
 
@@ -29,7 +29,7 @@ const store = createStore(
 );
 
 store.subscribe(() =>
-  console.log(store.getState().regions);
+  console.log(store.getState().regions)
   // first dispatch {"loading":true,"loaded":false,"status":null,"error":null,"payload":null}
   // second dispatch {"loading":false,"loaded":true,"status":200,"error":null,"payload":[{"id":1101,"nome":"M ...
 )

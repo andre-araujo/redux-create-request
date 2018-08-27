@@ -1,8 +1,8 @@
 import { createRequestService } from 'redux-create-request';
 
-const countiesURL = 'https://servicodados.ibge.gov.br/api/v1/localidades/estados/33/municipios';
+const regionURL = 'https://servicodados.ibge.gov.br/api/v1/localidades/mesorregioes';
 
-export const countiesService = createRequestService({
-  type: 'GET_COUNTIES_REQUEST',
-  request: () => fetch(countiesURL, { method: 'GET' }),
+export const regionsService = createRequestService({
+  type: 'GET_REGIONS_REQUEST',
+  request: () => fetch(regionURL, { method: 'GET' }),
 });
