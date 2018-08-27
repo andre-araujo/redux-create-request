@@ -91,9 +91,13 @@ const {
 Action type that will me used by redux to dispatch request states (start, success and error)
 
 ##### request
-The actual request action creator, it will be the function called by `createRequestService().action(...params)` and each param repassed to `request(...params)`, and it **must return a promise**
+The actual request action creator, it will be the function called by `createRequestService().action(...params)`.
 
-### Redux template
+Each param is repassed to `request(...params)`.
+
+It **must return a promise**
+
+### Redux state template
 `createRequestService().reducer` manages request state using the following template:
 
 ```javascript
@@ -109,23 +113,30 @@ const defaultInitialState = {
 ```
 
 ##### loading
-`true` when request start
-`false` when request ends
-`false` when request throws an error
+>`true` when request start
+
+>`false` when request ends
+
+>`false` when request throws an error
 
 ##### loaded
-`false` when request start
-`true` when request ends
-`false` when request throws an error
+>`false` when request start
+
+>`true` when request ends
+
+>`false` when request throws an error
 
 ##### status
-`null` when request start
-Receives status code from request
+> `null` when request start
+
+> Receives status code from request
 
 ##### error
-`null` when request start
-Receives error object when promise throws an error
+> `null` when request start
+
+> Receives error object when promise throws an error
 
 ##### payload
-`null` when request start
-Receives request payload when it has a `JSON` content-type header
+> `null` when request start
+
+> Receives request payload when it has a `JSON` content-type header
