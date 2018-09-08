@@ -49,9 +49,11 @@ const createRequestMiddleware = store => next => (action) => {
         });
         return resp;
       });
-  } else {
-    next(action);
+
+    return;
   }
+
+  return next(action);
 };
 
 export default createRequestMiddleware;
