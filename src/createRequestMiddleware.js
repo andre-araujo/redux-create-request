@@ -1,6 +1,6 @@
 const createRequestMiddleware = store => next => (action) => {
   if (typeof action === 'function' && action.requestActionType) {
-    return action(store);
+    return action(store.dispatch);
   }
   return next(action);
 };

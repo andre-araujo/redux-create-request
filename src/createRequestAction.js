@@ -18,22 +18,22 @@ const parseResponse = (resp) => {
 };
 
 const createRequestAction = (requestType, requestFunction) => {
-  const action = (store) => {
-    store.dispatch({
+  const action = (dispatch) => {
+    dispatch({
       type: requestType,
     });
 
     return requestFunction()
       .then(parseResponse)
       .then((resp) => {
-        store.dispatch({
+        dispatch({
           type: `${requestType}_SUCCESS`,
           ...resp,
         });
         return resp;
       })
       .catch((resp) => {
-        store.dispatch({
+        dispatch({
           type: `${requestType}_ERROR`,
           ...resp,
           error: new Error(resp),
