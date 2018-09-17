@@ -21,7 +21,7 @@ class GetSample extends Component {
 const mapStateToProps = ({ regions }) => ({ regions });
 
 const mapDispatchToProps = (dispatch) => ({
-  getRegions: () => dispatch(actions.getRegions())
+  getRegions: () => dispatch(actions.getRegions()).then(() => alert('Done!'))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GetSample);
