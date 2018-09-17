@@ -1,6 +1,6 @@
 {
   "name": "redux-create-request",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "A helper to make requests connected with redux without stress",
   "repository": {
     "type": "git",
